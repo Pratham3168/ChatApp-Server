@@ -12,6 +12,7 @@ import { app, server } from './lib/socket.js';
 
 
 const PORT = process.env.PORT || 8080;
+const HOST = '0.0.0.0';
 const CLIENT_ORIGINS = (process.env.CLIENT_URL || '')
   .split(',')
   .map((origin) => origin.trim())
@@ -46,8 +47,8 @@ app.use('/api/friend',friendRoutes);
 const startServer = async () => {
   await connectDB();
 
-  server.listen(PORT, () => {
-    console.log(`Server is Listening on port ${PORT}`);
+  server.listen(PORT, HOST, () => {
+    console.log(`Server is Listening on ${HOST}:${PORT}`);
   });
 };
 
