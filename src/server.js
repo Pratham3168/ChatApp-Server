@@ -11,7 +11,7 @@ import friendRoutes from './routes/friend.routes.js'
 import { app, server } from './lib/socket.js';
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 const CLIENT_ORIGINS = (process.env.CLIENT_URL || '')
   .split(',')
   .map((origin) => origin.trim())
